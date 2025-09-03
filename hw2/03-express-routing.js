@@ -11,24 +11,3 @@ const port = process.env.PORT || 5001;
 // http://localhost:5001/cookie should return 'cookies… yummm' in plain text and set 'hello=world' as a cookie
 
 // For other routes, such as http://localhost:5001/other, this exercise should return a status code 404 with '404 - page not found' in html format
-
-const routes = [
-  'welcome',
-  'redirect',
-  'redirected',
-  'cache',
-  'cookie',
-  'other',
-];
-
-app.get('/', (req, res) => {
-  res.status(200);
-  res.set({ 'Content-Type': 'text/html' });
-  res.send('Express Routing Exercise');
-});
-
-// Add your code here
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});

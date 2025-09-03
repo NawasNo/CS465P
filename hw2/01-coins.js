@@ -2,6 +2,38 @@
 
 // Add your function here 
 
+function calculateChange(dollars){
+    if(dollars <= 100){
+        let cents = Math.round(dollars * 100)
+
+        const values = {
+            dollars: Math.floor(cents / 100),
+            quarters: 0,
+            dimes: 0,
+            nickels: 0,
+            pennies: 0
+        }
+
+        cents %= 100;
+
+        values.quarters = Math.floor(cents / 25);
+        cents %= 25;
+
+        values.dimes = Math.floor(cents / 10);
+        cents %= 10;
+
+        values.nickels = Math.floor(cents / 5);
+        cents %= 5;
+    
+        values.pennies = cents;
+
+        return values
+    } else{
+        return "Error: the number is too large"
+    }
+}
+
+
 // Sample test cases
 console.log(calculateChange(4.62));
 // $4.62 ==> 4 dollars, 2 quarters, 1 dime, 2 pennies

@@ -10,22 +10,3 @@ const port = process.env.PORT || 5001;
 // http://localhost:5001/cookie should return 'cookies… yummm' in plain text and set 'hello=world' as a cookie
 
 // For other routes, such as http://localhost:5001/other, this exercise should return a status code 404 with '404 - page not found' in html format
-
-const server = http.createServer((req, res) => {
-  const routes = [
-    'welcome',
-    'redirect',
-    'redirected',
-    'cache',
-    'cookie',
-    'other',
-  ];
-
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('Node Routing Exercise');
-  res.end();
-});
-
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
