@@ -33,11 +33,12 @@ const calculateChange = function calculateChange (amount) {
     [pennies, 'penny'],
   ];
 
+// Remove coins with a count of zero and formats the remaining coins
   const result = coins
     .filter(([count]) => count > 0)
     .map(([count, coin]) => {
-      const plural = coin == 'penny' ? 'pennies' : `${coin}s`;
-      return `${count} ${count == 1 ? coin : plural}`;
+      const plural = coin === 'penny' ? 'pennies' : `${coin}s`;
+      return `${count} ${count === 1 ? coin : plural}`;
     });
 
   return result.length > 0 ? result.join(', ') : '0 coins';

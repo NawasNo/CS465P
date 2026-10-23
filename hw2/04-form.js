@@ -16,6 +16,7 @@ app.post('/submit', (req, res) => {
     newsletter,
   } = req.body;
 
+//Escape special characters so users input is displayed as text instead of HTML 
   const escapeHtml = (value) => String(value || '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
