@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h2 Most Populous Countries
+  p.subtitle Countries with populations of at least 50 million.
+
+  .card-grid
+    each country in countries
+      article.card
+        if country.flag
+          img.flag-image(
+            src=country.flag
+            alt=`Flag of ${country.name}`
+            loading="lazy"
+          )
+        h3= country.name
+        p
+          strong Population:
+          |  #{country.population.toLocaleString('en-US')}
