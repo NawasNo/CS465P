@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 Countries of the World
+  p.subtitle Total countries and territories: #{countries.length}
+
+  .card-grid
+    each country in countries
+      article.card
+        h3= country.name
+        p
+          strong Capital:
+          |  #{country.capital}

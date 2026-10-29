@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 World Regions
+  p.subtitle Countries grouped by region.
+
+  each region in regions
+    section.region-card
+      h3= region.name
+      p
+        strong Number of countries:
+        |  #{region.count}
+
+      ul.country-list
+        each country in region.countries
+          li= country
